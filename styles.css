@@ -1,0 +1,10 @@
+header {
+  padding: 50px;
+}
+.container {
+  padding: 50px;
+  display: flex;
+}
+footer {
+  padding: 50px;
+}
