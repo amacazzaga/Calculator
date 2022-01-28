@@ -4,12 +4,15 @@ header {
 .container-calculator {
   padding: 5px;
 }
+.visor-div {
+  display: flex;
+  justify-content: center;
+}
 .visor {
   border: solid;
   display: flex;
-  align-items: center;
-  height: 72px;
-  width: 72px;
+  height: 50px;
+  width: 435px;
 }
 .container-buttons {
   padding: 5px;
