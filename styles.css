@@ -2,8 +2,10 @@ header {
   padding: 50px;
 }
 .container-calculator {
-  padding: 20px;
-  border: solid;
+  padding: 5px;
+}
+.container-buttons {
+  padding: 5px;
   display: flex;
   justify-content: center;
 }
@@ -11,7 +13,10 @@ header {
   display: flex;
   flex-direction: column;
 }
-
+.input {
+  display: flex;
+  justify-content: center;
+}
 footer {
   padding: 50px;
 }
