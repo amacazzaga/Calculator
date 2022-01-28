@@ -1,10 +1,17 @@
 header {
   padding: 50px;
 }
-.container {
-  padding: 50px;
+.container-calculator {
+  padding: 20px;
+  border: solid;
   display: flex;
+  justify-content: center;
 }
+.container-simbols {
+  display: flex;
+  flex-direction: column;
+}
+
 footer {
   padding: 50px;
 }
