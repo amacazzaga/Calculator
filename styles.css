@@ -4,6 +4,13 @@ header {
 .container-calculator {
   padding: 5px;
 }
+.visor {
+  border: solid;
+  display: flex;
+  align-items: center;
+  height: 72px;
+  width: 72px;
+}
 .container-buttons {
   padding: 5px;
   display: flex;
@@ -13,9 +20,16 @@ header {
   display: flex;
   flex-direction: column;
 }
-.input {
-  display: flex;
-  justify-content: center;
+button {
+  border: solid;
+  height: 72px;
+  width: 72px;
+  font-size: 75px;
+}
+.button-number {
+  border: solid;
+  height: 120px;
+  width: 120px;
 }
 footer {
   padding: 50px;
