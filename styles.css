@@ -3,7 +3,7 @@ header {
   background-color: blue;
 }
 .container-calculator {
-  padding: 5px;
+  padding: 20px;
 }
 .visor-div {
   display: flex;
