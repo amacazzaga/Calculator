@@ -54,7 +54,12 @@ const arrOfButtonNumbers = [
 ];
 const buttonsClick = arrOfButtonNumbers.forEach((el) => {
   const buttonClicked = el.boton;
+  const valueOfButtonClicked = el.value;
   buttonClicked.addEventListener("click", () => {
-    alert("s");
+    valueOfButtonClicked.value = visor.innerText;
+    console.log(visor);
   });
 });
+
+function visorInfo() {}
+visorInfo(buttonsClick);
