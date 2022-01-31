@@ -16,9 +16,9 @@ const buttonResult = document.getElementById("result");
 const visor = document.getElementById("visor");
 //declarar .value de cada boton//
 const arrOfButtonNumbers = [
-  (button = {
-    boton: buttonOne,
-    id: 1,
+  (button1 = {
+    boton1: buttonOne,
+    value: 1,
   }),
 ];
-console.log(arrOfButtonNumbers[0]);
+console.log(arrOfButtonNumbers[0].value);
