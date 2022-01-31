@@ -15,5 +15,10 @@ const buttonDivision = document.getElementById("division");
 const buttonResult = document.getElementById("result");
 const visor = document.getElementById("visor");
 //declarar .value de cada boton//
-buttonOne.value = buttonOne.id;
-console.log(buttonOne.value);
+const arrOfButtonNumbers = [
+  (button = {
+    boton: buttonOne,
+    id: 1,
+  }),
+];
+console.log(arrOfButtonNumbers[0]);
