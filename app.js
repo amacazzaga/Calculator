@@ -13,7 +13,7 @@ const buttonSubstraction = document.getElementById("substraction");
 const buttonMultiplication = document.getElementById("multiplication");
 const buttonDivision = document.getElementById("division");
 const buttonResult = document.getElementById("result");
-const visor = document.getElementById("visor");
+let visor = document.getElementById("visor");
 const arrOfButtonNumbers = [
   (button1 = {
     boton: buttonOne,
@@ -54,10 +54,9 @@ const arrOfButtonNumbers = [
 ];
 const buttonsClick = arrOfButtonNumbers.forEach((el) => {
   const buttonClicked = el.boton;
-  const valueOfButtonClicked = el.value;
+  let valueOfButtonClicked = el.value;
   buttonClicked.addEventListener("click", () => {
-    valueOfButtonClicked.value = visor.innerText;
-    console.log(visor);
+    visor.innerText = valueOfButtonClicked;
   });
 });
 
