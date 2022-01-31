@@ -20,5 +20,36 @@ const arrOfButtonNumbers = [
     boton1: buttonOne,
     value: 1,
   }),
+  (button2 = {
+    boton2: buttonTwo,
+    value: 2,
+  }),
+  (button3 = {
+    boton3: buttonThree,
+    value: 3,
+  }),
+  (button4 = {
+    boton4: buttonFour,
+    value: 4,
+  }),
+  (button5 = {
+    boton5: buttonFive,
+    value: 5,
+  }),
+  (button6 = {
+    boton6: buttonSix,
+    value: 6,
+  }),
+  (button7 = {
+    boton7: buttonSeven,
+    value: 7,
+  }),
+  (button8 = {
+    boton8: buttonEight,
+    value: 8,
+  }),
+  (button9 = {
+    boton9: buttonNine,
+    value: 9,
+  }),
 ];
-console.log(arrOfButtonNumbers[0].value);
