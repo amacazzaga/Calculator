@@ -14,42 +14,47 @@ const buttonMultiplication = document.getElementById("multiplication");
 const buttonDivision = document.getElementById("division");
 const buttonResult = document.getElementById("result");
 const visor = document.getElementById("visor");
-//declarar .value de cada boton//
 const arrOfButtonNumbers = [
   (button1 = {
-    boton1: buttonOne,
+    boton: buttonOne,
     value: 1,
   }),
   (button2 = {
-    boton2: buttonTwo,
+    boton: buttonTwo,
     value: 2,
   }),
   (button3 = {
-    boton3: buttonThree,
+    boton: buttonThree,
     value: 3,
   }),
   (button4 = {
-    boton4: buttonFour,
+    boton: buttonFour,
     value: 4,
   }),
   (button5 = {
-    boton5: buttonFive,
+    boton: buttonFive,
     value: 5,
   }),
   (button6 = {
-    boton6: buttonSix,
+    boton: buttonSix,
     value: 6,
   }),
   (button7 = {
-    boton7: buttonSeven,
+    boton: buttonSeven,
     value: 7,
   }),
   (button8 = {
-    boton8: buttonEight,
+    boton: buttonEight,
     value: 8,
   }),
   (button9 = {
-    boton9: buttonNine,
+    boton: buttonNine,
     value: 9,
   }),
 ];
+const buttonsClick = arrOfButtonNumbers.forEach((el) => {
+  const buttonClicked = el.boton;
+  buttonClicked.addEventListener("click", () => {
+    alert("s");
+  });
+});
