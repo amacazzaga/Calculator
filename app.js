@@ -60,8 +60,8 @@ function visorInfo() {
     const valueOfButtonClicked = el.value;
     buttonClicked.addEventListener("click", () => {
       arrOfNumbersOnVisor.push(valueOfButtonClicked);
-      visor.innerText = arrOfNumbersOnVisor.join("");
-      console.log(visor.innerText);
+      const joinedToNumber = Number(arrOfNumbersOnVisor.join(""));
+      visor.innerText = joinedToNumber; // visor will be string!
     });
   });
 }
