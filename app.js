@@ -16,7 +16,7 @@ const buttonDivision = document.getElementById("/");
 const buttonComa = document.getElementById(",");
 const buttonResult = document.getElementById("result");
 let visor = document.getElementById("visor");
-let textOnVisor = visor.innerText;
+let toNumber = 0;
 let arrOfNumbersOnVisor = [];
 const arrOfButtonNumbers = [
   (button0 = {
@@ -97,7 +97,7 @@ function visorInfo() {
     const valueOfButtonClicked = el.value;
     buttonClicked.addEventListener("click", () => {
       arrOfNumbersOnVisor.push(valueOfButtonClicked);
-      const toNumber = Number(arrOfNumbersOnVisor.join(""));
+      toNumber = Number(arrOfNumbersOnVisor.join(""));
       visor.innerText = toNumber; // visor will be string!
     });
   });
