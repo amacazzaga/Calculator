@@ -1,3 +1,4 @@
+const buttonCero = document.getElementById("0");
 const buttonOne = document.getElementById("1");
 const buttonTwo = document.getElementById("2");
 const buttonThree = document.getElementById("3");
@@ -17,6 +18,10 @@ let visor = document.getElementById("visor");
 let textOnVisor = visor.innerText;
 let arrOfNumbersOnVisor = [];
 const arrOfButtonNumbers = [
+  (button0 = {
+    boton: buttonCero,
+    value: 0,
+  }),
   (button1 = {
     boton: buttonOne,
     value: 1,
