@@ -54,17 +54,15 @@ const arrOfButtonNumbers = [
     value: 9,
   }),
 ];
-
-const buttonsClick = arrOfButtonNumbers.map((el) => {
-  const buttonClicked = el.boton;
-  const valueOfButtonClicked = el.value;
-  buttonClicked.addEventListener("click", () => {
-    // visor.innerText = valueOfButtonClicked;
-    arrOfNumbersOnVisor.push(valueOfButtonClicked);
-    visor.innerText = arrOfNumbersOnVisor.join("");
-    console.log(visor.innerText);
+function visorInfo() {
+  arrOfButtonNumbers.map((el) => {
+    const buttonClicked = el.boton;
+    const valueOfButtonClicked = el.value;
+    buttonClicked.addEventListener("click", () => {
+      arrOfNumbersOnVisor.push(valueOfButtonClicked);
+      visor.innerText = arrOfNumbersOnVisor.join("");
+      console.log(visor.innerText);
+    });
   });
-});
-
-function visorInfo() {}
-visorInfo(buttonsClick);
+}
+visorInfo(arrOfNumbersOnVisor, arrOfButtonNumbers);
