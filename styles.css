@@ -16,7 +16,6 @@ header {
   width: 453px;
 }
 .container-buttons {
-  padding: 5px;
   display: flex;
   justify-content: center;
 }

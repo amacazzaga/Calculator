@@ -75,3 +75,4 @@ function visorInfo() {
   });
 }
 visorInfo(arrOfNumbersOnVisor, arrOfButtonNumbers);
+///////////////////////////////////////////////////////
