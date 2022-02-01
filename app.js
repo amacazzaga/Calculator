@@ -14,6 +14,7 @@ const buttonMultiplication = document.getElementById("multiplication");
 const buttonDivision = document.getElementById("division");
 const buttonResult = document.getElementById("result");
 let visor = document.getElementById("visor");
+let textOnVisor = visor.innerText;
 let arrOfNumbersOnVisor = [];
 const arrOfButtonNumbers = [
   (button1 = {
@@ -60,9 +61,8 @@ const buttonsClick = arrOfButtonNumbers.map((el) => {
   buttonClicked.addEventListener("click", () => {
     // visor.innerText = valueOfButtonClicked;
     arrOfNumbersOnVisor.push(valueOfButtonClicked);
-    visor.innerText = arrOfNumbersOnVisor.map((el) => {
-      return el;
-    });
+    visor.innerText = arrOfNumbersOnVisor.join("");
+    console.log(visor.innerText);
   });
 });
 
