@@ -9,10 +9,11 @@ const buttonSeven = document.getElementById("7");
 const buttonEight = document.getElementById("8");
 const buttonNine = document.getElementById("9");
 const buttonClear = document.getElementById("clear");
-const buttonSum = document.getElementById("sum");
-const buttonSubstraction = document.getElementById("substraction");
-const buttonMultiplication = document.getElementById("multiplication");
-const buttonDivision = document.getElementById("division");
+const buttonSum = document.getElementById("+");
+const buttonSubstraction = document.getElementById("-");
+const buttonMultiplication = document.getElementById("*");
+const buttonDivision = document.getElementById("/");
+const buttonComa = document.getElementById(",");
 const buttonResult = document.getElementById("result");
 let visor = document.getElementById("visor");
 let textOnVisor = visor.innerText;
@@ -57,6 +58,28 @@ const arrOfButtonNumbers = [
   (button9 = {
     boton: buttonNine,
     value: 9,
+  }),
+];
+const arrOfSymbol = [
+  (coma = {
+    boton: buttonComa,
+    value: buttonComa.id,
+  }),
+  (sum = {
+    boton: buttonSum,
+    value: buttonSum.id,
+  }),
+  (subs = {
+    boton: buttonSubstraction,
+    value: buttonSubstraction.id,
+  }),
+  (mult = {
+    boton: buttonMultiplication,
+    value: buttonMultiplication.id,
+  }),
+  (divi = {
+    boton: buttonDivision,
+    value: buttonDivision.id,
   }),
 ];
 ////////////////////////////////////////////////////////
