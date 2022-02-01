@@ -54,14 +54,23 @@ const arrOfButtonNumbers = [
     value: 9,
   }),
 ];
+////////////////////////////////////////////////////////
+function clearVisor() {
+  buttonClear.addEventListener("click", () => {
+    arrOfNumbersOnVisor = [];
+    visor.innerText = " ";
+  });
+}
+clearVisor(buttonClear);
+//////////////////////////////////////////////////////
 function visorInfo() {
   arrOfButtonNumbers.map((el) => {
     const buttonClicked = el.boton;
     const valueOfButtonClicked = el.value;
     buttonClicked.addEventListener("click", () => {
       arrOfNumbersOnVisor.push(valueOfButtonClicked);
-      const joinedToNumber = Number(arrOfNumbersOnVisor.join(""));
-      visor.innerText = joinedToNumber; // visor will be string!
+      const toNumber = Number(arrOfNumbersOnVisor.join(""));
+      visor.innerText = toNumber; // visor will be string!
     });
   });
 }
