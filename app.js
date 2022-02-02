@@ -13,7 +13,7 @@ const buttonSum = document.getElementById("+");
 const buttonSubstraction = document.getElementById("-");
 const buttonMultiplication = document.getElementById("*");
 const buttonDivision = document.getElementById("/");
-const buttonComa = document.getElementById(",");
+const buttonComa = document.getElementById(".");
 const buttonResult = document.getElementById("result");
 let visor = document.getElementById("visor");
 let toNumber = 0;
@@ -59,12 +59,12 @@ const arrOfButtonNumbers = [
     boton: buttonNine,
     value: 9,
   }),
-];
-const arrOfSymbol = [
   (coma = {
     boton: buttonComa,
     value: buttonComa.id,
   }),
+];
+const arrOfSymbol = [
   (sum = {
     boton: buttonSum,
     value: buttonSum.id,
@@ -93,12 +93,13 @@ clearVisor(buttonClear);
 //////////////////////////////////////////////////////
 function visorInfo() {
   arrOfButtonNumbers.map((el) => {
+    // revisar el tema del elemento padre esperando un event
     const buttonClicked = el.boton;
     const valueOfButtonClicked = el.value;
     buttonClicked.addEventListener("click", () => {
       arrOfNumbersOnVisor.push(valueOfButtonClicked);
+      visor.innerText = arrOfNumbersOnVisor.join("");
       toNumber = Number(arrOfNumbersOnVisor.join(""));
-      visor.innerText = toNumber; // visor will be string!
     });
   });
 }
