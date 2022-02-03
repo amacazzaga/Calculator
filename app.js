@@ -19,6 +19,7 @@ let visor = document.getElementById("visor");
 let toNumberLeft = 0;
 let toNumberRight = 0;
 let arrOfNumbersOnVisor = [];
+let arrOfNumbersOnVisorB = [];
 const arrOfButtonNumbers = [
   (button0 = {
     boton: buttonCero,
@@ -76,6 +77,7 @@ const arrOfSymbol = [
 function clearVisor() {
   buttonClear.addEventListener("click", () => {
     arrOfNumbersOnVisor = [];
+    arrOfNumbersOnVisorB = [];
     visor.innerText = " ";
   });
 }
@@ -84,10 +86,10 @@ clearVisor(buttonClear);
 function visorInfo() {
   arrOfButtonNumbers.map((el) => {
     // revisar el tema del elemento padre esperando un event
-    const buttonClickedSum = el.boton;
-    const valueOfButtonClickedSum = el.value;
-    buttonClickedSum.addEventListener("click", () => {
-      arrOfNumbersOnVisor.push(valueOfButtonClickedSum);
+    const buttonClicked = el.boton;
+    const valueOfButtonClicked = el.value;
+    buttonClicked.addEventListener("click", () => {
+      arrOfNumbersOnVisor.push(valueOfButtonClicked);
       toNumberLeft = Number(arrOfNumbersOnVisor.join(""));
       visor.innerText = toNumberLeft;
     });
@@ -99,7 +101,20 @@ visorInfo(arrOfNumbersOnVisor, arrOfButtonNumbers);
 function sum() {
   buttonSum.addEventListener("click", () => {
     let a = toNumberLeft;
-    let b = toNumberRight;
+    let b;
+
+    arrOfButtonNumbers.map((el) => {
+      // revisar el tema del elemento padre esperando un event
+      const buttonClickedB = el.boton;
+      const valueOfButtonClickedB = el.value;
+      buttonClickedB.addEventListener("click", () => {
+        arrOfNumbersOnVisorB.push(valueOfButtonClickedB);
+        toNumberRight = Number(arrOfNumbersOnVisorB.join(""));
+        b = toNumberRight;
+        console.log(toNumberRight);
+        console.log(b);
+      });
+    });
 
     buttonResult.addEventListener("click", () => {
       let eso = a + b;
