@@ -16,7 +16,8 @@ const buttonDivision = document.getElementById("/");
 const buttonComa = document.getElementById(".");
 const buttonResult = document.getElementById("result");
 let visor = document.getElementById("visor");
-let toNumber = 0;
+let toNumberLeft = 0;
+let toNumberRight = 0;
 let arrOfNumbersOnVisor = [];
 const arrOfButtonNumbers = [
   (button0 = {
@@ -65,23 +66,12 @@ const arrOfButtonNumbers = [
   }),
 ];
 const arrOfSymbol = [
-  (sum = {
-    boton: buttonSum,
-    value: buttonSum.id,
-  }),
-  (subs = {
-    boton: buttonSubstraction,
-    value: buttonSubstraction.id,
-  }),
-  (mult = {
-    boton: buttonMultiplication,
-    value: buttonMultiplication.id,
-  }),
-  (divi = {
-    boton: buttonDivision,
-    value: buttonDivision.id,
-  }),
+  buttonSum,
+  buttonSubstraction,
+  buttonMultiplication,
+  buttonDivision,
 ];
+
 ////////////////////////////////////////////////////////
 function clearVisor() {
   buttonClear.addEventListener("click", () => {
@@ -94,14 +84,27 @@ clearVisor(buttonClear);
 function visorInfo() {
   arrOfButtonNumbers.map((el) => {
     // revisar el tema del elemento padre esperando un event
-    const buttonClicked = el.boton;
-    const valueOfButtonClicked = el.value;
-    buttonClicked.addEventListener("click", () => {
-      arrOfNumbersOnVisor.push(valueOfButtonClicked);
-      visor.innerText = arrOfNumbersOnVisor.join("");
-      toNumber = Number(arrOfNumbersOnVisor.join(""));
+    const buttonClickedSum = el.boton;
+    const valueOfButtonClickedSum = el.value;
+    buttonClickedSum.addEventListener("click", () => {
+      arrOfNumbersOnVisor.push(valueOfButtonClickedSum);
+      toNumberLeft = Number(arrOfNumbersOnVisor.join(""));
+      visor.innerText = toNumberLeft;
     });
   });
 }
 visorInfo(arrOfNumbersOnVisor, arrOfButtonNumbers);
 ///////////////////////////////////////////////////////
+
+function sum() {
+  buttonSum.addEventListener("click", () => {
+    let a = toNumberLeft;
+    let b = toNumberRight;
+
+    buttonResult.addEventListener("click", () => {
+      let eso = a + b;
+      console.log(eso);
+    });
+  });
+}
+sum();
