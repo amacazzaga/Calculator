@@ -78,6 +78,8 @@ function clearVisor() {
   buttonClear.addEventListener("click", () => {
     arrOfNumbersOnVisor = [];
     arrOfNumbersOnVisorB = [];
+    toNumberLeft = 0;
+    toNumberRight = 0;
     visor.innerText = " ";
   });
 }
@@ -102,7 +104,6 @@ function sum() {
   buttonSum.addEventListener("click", () => {
     let a = toNumberLeft;
     let b;
-
     arrOfButtonNumbers.map((el) => {
       // revisar el tema del elemento padre esperando un event
       const buttonClickedB = el.boton;
@@ -115,7 +116,6 @@ function sum() {
         console.log(b);
       });
     });
-
     buttonResult.addEventListener("click", () => {
       let eso = a + b;
       console.log(eso);
