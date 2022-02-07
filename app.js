@@ -110,6 +110,7 @@ function sum() {
     resultPlus();
   });
 }
+/////////////////////////////////////////
 function mult() {
   buttonMultiplication.addEventListener("click", () => {
     turn = "right";
@@ -125,6 +126,7 @@ function mult() {
     resultMultiply();
   });
 }
+//////////////////////////////////
 function subs() {
   buttonSubstraction.addEventListener("click", () => {
     turn = "right";
@@ -140,6 +142,7 @@ function subs() {
     resultSubs();
   });
 }
+////////////////////////////////
 function divide() {
   buttonDivision.addEventListener("click", () => {
     turn = "right";
