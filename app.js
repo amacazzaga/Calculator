@@ -15,6 +15,7 @@ const buttonMultiplication = document.getElementById("*");
 const buttonDivision = document.getElementById("/");
 const buttonComa = document.getElementById(".");
 const buttonResult = document.getElementById("result");
+let turn = "left";
 let visor = document.getElementById("visor");
 let toNumberLeft = 0;
 let toNumberRight = 0;
@@ -74,26 +75,24 @@ const arrOfSymbol = [
 ];
 
 ////////////////////////////////////////////////////////
-function clearVisor() {
-  buttonClear.addEventListener("click", () => {
-    arrOfNumbersOnVisor = [];
-    arrOfNumbersOnVisorB = [];
-    toNumberLeft = 0;
-    toNumberRight = 0;
-    visor.innerText = " ";
-  });
-}
-clearVisor(buttonClear);
+
 //////////////////////////////////////////////////////
 function visorInfo() {
   arrOfButtonNumbers.map((el) => {
-    // revisar el tema del elemento padre esperando un event
     const buttonClicked = el.boton;
     const valueOfButtonClicked = el.value;
     buttonClicked.addEventListener("click", () => {
-      arrOfNumbersOnVisor.push(valueOfButtonClicked);
-      toNumberLeft = Number(arrOfNumbersOnVisor.join(""));
-      visor.innerText = toNumberLeft;
+      if (turn === "right") {
+        arrOfNumbersOnVisorB.push(valueOfButtonClicked);
+        toNumberRight = Number(arrOfNumbersOnVisorB.join(""));
+        visor.innerText = toNumberRight;
+        console.log(toNumberRight);
+      } else if (turn === "left") {
+        arrOfNumbersOnVisor.push(valueOfButtonClicked);
+        toNumberLeft = Number(arrOfNumbersOnVisor.join(""));
+        visor.innerText = toNumberLeft;
+        console.log(toNumberLeft);
+      }
     });
   });
 }
@@ -102,24 +101,45 @@ visorInfo(arrOfNumbersOnVisor, arrOfButtonNumbers);
 
 function sum() {
   buttonSum.addEventListener("click", () => {
+    turn = "right";
+    console.log(turn);
+
+    /* console.log(turn);
     let a = toNumberLeft;
     let b;
     arrOfButtonNumbers.map((el) => {
-      // revisar el tema del elemento padre esperando un event
       const buttonClickedB = el.boton;
       const valueOfButtonClickedB = el.value;
       buttonClickedB.addEventListener("click", () => {
+        if (turn != "right") {
+          return;
+        }
         arrOfNumbersOnVisorB.push(valueOfButtonClickedB);
         toNumberRight = Number(arrOfNumbersOnVisorB.join(""));
         b = toNumberRight;
-        console.log(toNumberRight);
         console.log(b);
       });
     });
+    {
+    }*/
     buttonResult.addEventListener("click", () => {
-      let eso = a + b;
+      let eso = toNumberLeft + toNumberRight;
       console.log(eso);
+      turn = "left";
     });
   });
 }
 sum();
+function clearVisor() {
+  buttonClear.addEventListener("click", () => {
+    arrOfNumbersOnVisor = [];
+    arrOfNumbersOnVisorB = [];
+    toNumberLeft = 0;
+    toNumberRight = 0;
+    visor.innerText = " ";
+    turn = "left";
+    console.log(toNumberLeft);
+    console.log(toNumberRight);
+  });
+}
+clearVisor();
