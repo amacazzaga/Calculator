@@ -17,8 +17,8 @@ const buttonComa = document.getElementById(".");
 const buttonResult = document.getElementById("result");
 const visor = document.getElementById("visor");
 let turn = "left";
-let toNumberLeft = 0;
-let toNumberRight = 0;
+let toNumberLeft = undefined;
+let toNumberRight = undefined;
 let arrOfNumbersOnVisor = [];
 let arrOfNumbersOnVisorB = [];
 let result = 0;
@@ -113,8 +113,8 @@ function clearVisor() {
   buttonClear.addEventListener("click", () => {
     arrOfNumbersOnVisor = [];
     arrOfNumbersOnVisorB = [];
-    toNumberLeft = 0;
-    toNumberRight = 0;
+    toNumberLeft = undefined;
+    toNumberRight = undefined;
     visor.innerText = " ";
     turn = "left";
     console.log(toNumberLeft);
