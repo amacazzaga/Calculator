@@ -125,6 +125,36 @@ function mult() {
     resultMultiply();
   });
 }
+function subs() {
+  buttonSubstraction.addEventListener("click", () => {
+    turn = "right";
+    console.log(turn);
+    function resultSubs() {
+      buttonResult.onclick = function e() {
+        let result = toNumberLeft - toNumberRight;
+        toNumberLeft = result;
+        arrOfNumbersOnVisorB = [];
+        console.log(result);
+      };
+    }
+    resultSubs();
+  });
+}
+function divide() {
+  buttonDivision.addEventListener("click", () => {
+    turn = "right";
+    console.log(turn);
+    function resultDivi() {
+      buttonResult.onclick = function e() {
+        let result = toNumberLeft / toNumberRight;
+        toNumberLeft = result;
+        arrOfNumbersOnVisorB = [];
+        console.log(result);
+      };
+    }
+    resultDivi();
+  });
+}
 //////////////////////////////////////////////////////
 function clearVisor() {
   buttonClear.onclick = function clear() {
@@ -141,4 +171,6 @@ function clearVisor() {
 visorInfo(arrOfNumbersOnVisor, arrOfButtonNumbers);
 clearVisor();
 sum();
+subs();
 mult();
+divide();
