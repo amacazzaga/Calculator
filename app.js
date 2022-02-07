@@ -17,8 +17,8 @@ const buttonComa = document.getElementById(".");
 const buttonResult = document.getElementById("result");
 const visor = document.getElementById("visor");
 let turn = "left";
-let toNumberLeft = undefined;
-let toNumberRight = undefined;
+let toNumberLeft;
+let toNumberRight;
 let arrOfNumbersOnVisor = [];
 let arrOfNumbersOnVisorB = [];
 let result = 0;
@@ -99,18 +99,36 @@ function sum() {
   buttonSum.addEventListener("click", () => {
     turn = "right";
     console.log(turn);
-    buttonResult.addEventListener("click", () => {
-      let result = toNumberLeft + toNumberRight;
-      toNumberLeft = result;
-      arrOfNumbersOnVisorB = [];
-      toNumberRight = 0;
-      console.log(result);
-    });
+    function resultPlus() {
+      buttonResult.onclick = function e() {
+        let result = toNumberLeft + toNumberRight;
+        toNumberLeft = result;
+        arrOfNumbersOnVisorB = [];
+        // toNumberRight = 0;
+        console.log(result);
+      };
+    }
+    resultPlus();
+  });
+}
+function mult() {
+  buttonMultiplication.addEventListener("click", () => {
+    turn = "right";
+    console.log(turn);
+    function resultX() {
+      buttonResult.onclick = function e() {
+        let result = toNumberLeft * toNumberRight;
+        toNumberLeft = result;
+        arrOfNumbersOnVisorB = [];
+        console.log(result);
+      };
+    }
+    resultX();
   });
 }
 //////////////////////////////////////////////////////
 function clearVisor() {
-  buttonClear.addEventListener("click", () => {
+  buttonClear.onclick = function clear() {
     arrOfNumbersOnVisor = [];
     arrOfNumbersOnVisorB = [];
     toNumberLeft = undefined;
@@ -119,8 +137,9 @@ function clearVisor() {
     turn = "left";
     console.log(toNumberLeft);
     console.log(toNumberRight);
-  });
+  };
 }
 visorInfo(arrOfNumbersOnVisor, arrOfButtonNumbers);
 clearVisor();
 sum();
+mult();
