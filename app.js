@@ -74,9 +74,6 @@ const arrOfSymbol = [
   buttonMultiplication,
   buttonDivision,
 ];
-
-////////////////////////////////////////////////////////
-
 //////////////////////////////////////////////////////
 function visorInfo() {
   arrOfButtonNumbers.map((el) => {
@@ -97,9 +94,7 @@ function visorInfo() {
     });
   });
 }
-visorInfo(arrOfNumbersOnVisor, arrOfButtonNumbers);
 ///////////////////////////////////////////////////////
-
 function sum() {
   buttonSum.addEventListener("click", () => {
     turn = "right";
@@ -113,7 +108,7 @@ function sum() {
     });
   });
 }
-
+//////////////////////////////////////////////////////
 function clearVisor() {
   buttonClear.addEventListener("click", () => {
     arrOfNumbersOnVisor = [];
@@ -126,5 +121,6 @@ function clearVisor() {
     console.log(toNumberRight);
   });
 }
+visorInfo(arrOfNumbersOnVisor, arrOfButtonNumbers);
 clearVisor();
 sum();
