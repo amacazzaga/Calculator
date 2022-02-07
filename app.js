@@ -17,8 +17,8 @@ const buttonComa = document.getElementById(".");
 const buttonResult = document.getElementById("result");
 const visor = document.getElementById("visor");
 let turn = "left";
-let toNumberLeft;
-let toNumberRight;
+let toNumberLeft = undefined;
+let toNumberRight = undefined;
 let arrOfNumbersOnVisor = [];
 let arrOfNumbersOnVisorB = [];
 let result = 0;
@@ -104,7 +104,6 @@ function sum() {
         let result = toNumberLeft + toNumberRight;
         toNumberLeft = result;
         arrOfNumbersOnVisorB = [];
-        // toNumberRight = 0;
         console.log(result);
       };
     }
@@ -115,7 +114,7 @@ function mult() {
   buttonMultiplication.addEventListener("click", () => {
     turn = "right";
     console.log(turn);
-    function resultX() {
+    function resultMultiply() {
       buttonResult.onclick = function e() {
         let result = toNumberLeft * toNumberRight;
         toNumberLeft = result;
@@ -123,7 +122,7 @@ function mult() {
         console.log(result);
       };
     }
-    resultX();
+    resultMultiply();
   });
 }
 //////////////////////////////////////////////////////
