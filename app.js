@@ -80,16 +80,16 @@ function visorInfo() {
     const buttonClicked = el.boton;
     const valueOfButtonClicked = el.value;
     buttonClicked.addEventListener("click", () => {
-      if (turn === "right") {
-        arrOfNumbersOnVisorB.push(valueOfButtonClicked);
-        toNumberRight = Number(arrOfNumbersOnVisorB.join(""));
-        visor.innerText = toNumberRight;
-        console.log(toNumberRight);
-      } else if (turn === "left") {
+      if (turn === "left") {
         arrOfNumbersOnVisor.push(valueOfButtonClicked);
         toNumberLeft = Number(arrOfNumbersOnVisor.join(""));
         visor.innerText = toNumberLeft;
         console.log(toNumberLeft);
+      } else if (turn === "right") {
+        arrOfNumbersOnVisorB.push(valueOfButtonClicked);
+        toNumberRight = Number(arrOfNumbersOnVisorB.join(""));
+        visor.innerText = toNumberRight;
+        console.log(toNumberRight);
       }
     });
   });
