@@ -88,7 +88,7 @@ function visorInfo() {
       } else if (turn === "right") {
         arrOfNumbersOnVisorB.push(valueOfButtonClicked);
         toNumberRight = Number(arrOfNumbersOnVisorB.join(""));
-        visor.innerText = toNumberRight;
+        visor.innerText = toNumberLeft + " " + toNumberRight;
         console.log(toNumberRight);
       }
     });
@@ -104,6 +104,7 @@ function sum() {
         let result = toNumberLeft + toNumberRight;
         toNumberLeft = result;
         arrOfNumbersOnVisorB = [];
+        visor.innerText = result;
         console.log(result);
       };
     }
@@ -120,6 +121,7 @@ function mult() {
         let result = toNumberLeft * toNumberRight;
         toNumberLeft = result;
         arrOfNumbersOnVisorB = [];
+        visor.innerText = result;
         console.log(result);
       };
     }
@@ -136,6 +138,7 @@ function subs() {
         let result = toNumberLeft - toNumberRight;
         toNumberLeft = result;
         arrOfNumbersOnVisorB = [];
+        visor.innerText = result;
         console.log(result);
       };
     }
@@ -152,6 +155,7 @@ function divide() {
         let result = toNumberLeft / toNumberRight;
         toNumberLeft = result;
         arrOfNumbersOnVisorB = [];
+        visor.innerText = result;
         console.log(result);
       };
     }
