@@ -74,6 +74,15 @@ const arrOfSymbol = [
   buttonMultiplication,
   buttonDivision,
 ];
+let eso = arrOfSymbol.map((el) => {
+  symbolClicked = el;
+  console.log(symbolClicked);
+  symbolClicked.addEventListener("click", () => {
+    return symbolClicked.id;
+  });
+});
+console.log(eso);
+
 //////////////////////////////////////////////////////
 function visorInfo() {
   arrOfButtonNumbers.map((el) => {
@@ -98,7 +107,6 @@ function visorInfo() {
 function sum() {
   buttonSum.addEventListener("click", () => {
     turn = "right";
-    console.log(turn);
     function resultPlus() {
       buttonResult.onclick = function e() {
         let result = toNumberLeft + toNumberRight;
@@ -115,7 +123,6 @@ function sum() {
 function mult() {
   buttonMultiplication.addEventListener("click", () => {
     turn = "right";
-    console.log(turn);
     function resultMultiply() {
       buttonResult.onclick = function e() {
         let result = toNumberLeft * toNumberRight;
@@ -132,7 +139,6 @@ function mult() {
 function subs() {
   buttonSubstraction.addEventListener("click", () => {
     turn = "right";
-    console.log(turn);
     function resultSubs() {
       buttonResult.onclick = function e() {
         let result = toNumberLeft - toNumberRight;
@@ -149,7 +155,6 @@ function subs() {
 function divide() {
   buttonDivision.addEventListener("click", () => {
     turn = "right";
-    console.log(turn);
     function resultDivi() {
       buttonResult.onclick = function e() {
         let result = toNumberLeft / toNumberRight;
