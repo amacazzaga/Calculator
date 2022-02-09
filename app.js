@@ -22,6 +22,7 @@ let toNumberRight = undefined;
 let arrOfNumbersOnVisor = [];
 let arrOfNumbersOnVisorB = [];
 let result = 0;
+let symbolVisor = [];
 const arrOfButtonNumbers = [
   (button0 = {
     boton: buttonCero,
@@ -74,14 +75,6 @@ const arrOfSymbol = [
   buttonMultiplication,
   buttonDivision,
 ];
-let eso = arrOfSymbol.map((el) => {
-  symbolClicked = el;
-  console.log(symbolClicked);
-  symbolClicked.addEventListener("click", () => {
-    return symbolClicked.id;
-  });
-});
-console.log(eso);
 
 //////////////////////////////////////////////////////
 function visorInfo() {
@@ -97,9 +90,16 @@ function visorInfo() {
       } else if (turn === "right") {
         arrOfNumbersOnVisorB.push(valueOfButtonClicked);
         toNumberRight = Number(arrOfNumbersOnVisorB.join(""));
-        visor.innerText = toNumberLeft + " " + toNumberRight;
+        visor.innerText = toNumberLeft + symbolVisor + toNumberRight;
         console.log(toNumberRight);
       }
+    });
+  });
+
+  arrOfSymbol.map((el) => {
+    const symbolClicked = el;
+    symbolClicked.addEventListener("click", () => {
+      symbolVisor.push(symbolClicked.id);
     });
   });
 }
