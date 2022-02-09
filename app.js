@@ -95,11 +95,11 @@ function visorInfo() {
       }
     });
   });
-
   arrOfSymbol.map((el) => {
     const symbolClicked = el;
     symbolClicked.addEventListener("click", () => {
       symbolVisor.push(symbolClicked.id);
+      visor.innerText = toNumberLeft + symbolVisor;
     });
   });
 }
@@ -112,6 +112,7 @@ function sum() {
         let result = toNumberLeft + toNumberRight;
         toNumberLeft = result;
         arrOfNumbersOnVisorB = [];
+        symbolVisor = [];
         visor.innerText = result;
         console.log(result);
       };
@@ -127,6 +128,7 @@ function mult() {
       buttonResult.onclick = function e() {
         let result = toNumberLeft * toNumberRight;
         toNumberLeft = result;
+        symbolVisor = [];
         arrOfNumbersOnVisorB = [];
         visor.innerText = result;
         console.log(result);
@@ -143,6 +145,7 @@ function subs() {
       buttonResult.onclick = function e() {
         let result = toNumberLeft - toNumberRight;
         toNumberLeft = result;
+        symbolVisor = [];
         arrOfNumbersOnVisorB = [];
         visor.innerText = result;
         console.log(result);
@@ -159,6 +162,7 @@ function divide() {
       buttonResult.onclick = function e() {
         let result = toNumberLeft / toNumberRight;
         toNumberLeft = result;
+        symbolVisor = [];
         arrOfNumbersOnVisorB = [];
         visor.innerText = result;
         console.log(result);
@@ -172,6 +176,7 @@ function clearVisor() {
   buttonClear.onclick = function clear() {
     arrOfNumbersOnVisor = [];
     arrOfNumbersOnVisorB = [];
+    symbolVisor = [];
     toNumberLeft = undefined;
     toNumberRight = undefined;
     visor.innerText = " ";
